@@ -65,6 +65,7 @@ const Create = () => {
                     icon: 'success',
                     confirmButtonText: 'OK'
                 }).then(() => {
+                    navigate('/'); 
                    
                 });
             }
@@ -79,9 +80,8 @@ const Create = () => {
         }
     }
 
-    // (Optional) ถ้าไม่ได้ Login ให้เด้งออก หรือแสดงข้อความ
     if (!userInfo) {
-         return  navigate("/login")// หรือแสดงข้อความเตือน
+         return  navigate("/login")
     }
 
     return (
@@ -91,7 +91,6 @@ const Create = () => {
 
                 <form className="space-y-6">
 
-                    {/* Name Input */}
                     <div>
                         <label className="label">
                             <span className="label-text font-bold text-base">Name (ชื่อพี่เลี้ยง)</span>
@@ -105,7 +104,6 @@ const Create = () => {
                         />
                     </div>
 
-                    {/* Image Input */}
                     <div>
                         <label className="label">
                             <span className="label-text font-bold text-base">Your picture image</span>
@@ -117,7 +115,6 @@ const Create = () => {
                         />
                     </div>
 
-                    {/* Service Select */}
                     <div>
                         <label className="label">
                             <span className="label-text font-bold text-base">Your service</span>
@@ -135,7 +132,6 @@ const Create = () => {
                         </select>
                     </div>
 
-                    {/* Price Input */}
                     <div>
                         <label className="label">
                             <span className="label-text font-bold text-base">Price (THB)</span>
@@ -149,7 +145,6 @@ const Create = () => {
                         />
                     </div>
 
-                    {/* Content Editor */}
                     <div>
                         <label className="label">
                             <span className="label-text font-bold text-base">About yourself & Service details</span>

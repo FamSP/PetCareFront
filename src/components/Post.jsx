@@ -5,7 +5,6 @@ import Swal from 'sweetalert2';
 import postService from '../services/post.service';
 
 const Post = ({ postDetail }) => {
-    // 1. ป้องกันจอขาวถ้าไม่มีข้อมูล
     if (!postDetail) {
         return null; 
     }
@@ -47,7 +46,6 @@ const Post = ({ postDetail }) => {
                             'โพสต์ของคุณถูกลบเรียบร้อยแล้ว',
                             'success'
                         ).then(() => {
-                            // รีโหลดหน้าเพื่อให้โพสต์หายไป
                             window.location.reload(); 
                         });
                     }
@@ -65,7 +63,6 @@ const Post = ({ postDetail }) => {
 
     return (
         <div className="indicator">
-            {/* 4. แสดงปุ่ม X เฉพาะเมื่อเป็นเจ้าของ (isOwner = true) */}
             {isOwner && (
                 <span 
                     className="indicator-item badge badge-secondary cursor-pointer h-8 w-8 font-bold flex items-center justify-center hover:bg-red-600 transition-colors"
